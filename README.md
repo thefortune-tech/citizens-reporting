@@ -28,7 +28,7 @@ Users can securely access the platform through email and password authentication
 
 * User registration
 * User login
-* Persistent authentication state
+* Persistent authentication state 
 * Secure logout
 * Authentication error handling
 * User-specific report tracking
