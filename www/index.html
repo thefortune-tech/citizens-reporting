@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Citizens Reporting</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- ================================= -->
+<!-- LOGIN / SIGN UP SCREEN -->
+<!-- ================================= -->
+
+<section
+    id="loginScreen"
+    class="screen"
+>
+
+    <div class="login-card">
+
+        <div class="logo">
+            🚨
+        </div>
+
+        <h1>
+            Citizens Reporting
+        </h1>
+
+        <p class="subtitle">
+            Report incidents and keep your community informed.
+        </p>
+
+
+        <!-- LOGIN FORM -->
+
+        <form id="loginForm">
+
+            <div class="input-group">
+
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <div class="password-container">
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        id="togglePassword"
+                        class="password-toggle"
+                    >
+                        Show
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="primary-button"
+            >
+                Login
+            </button>
+
+        </form>
+
+
+        <!-- SIGN UP FORM -->
+
+        <form
+            id="signupForm"
+            class="hidden"
+        >
+
+            <div class="input-group">
+
+                <label for="signupEmail">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="signupEmail"
+                    placeholder="Enter your email"
+                    required
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="signupPassword">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="signupPassword"
+                    placeholder="Create a password"
+                    minlength="6"
+                    required
+                >
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="confirmPassword">
+                    Confirm Password
+                </label>
+
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    placeholder="Confirm your password"
+                    minlength="6"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="primary-button"
+            >
+                Create Account
+            </button>
+
+        </form>
+
+
+        <!-- AUTH SWITCH -->
+
+        <p
+            id="authSwitch"
+            class="auth-switch"
+        >
+
+            Don't have an account?
+
+            <button
+                type="button"
+                id="showSignupButton"
+                class="text-button"
+            >
+                Create one
+            </button>
+
+        </p>
+
+
+        <!-- AUTH MESSAGE -->
+
+        <p
+            id="loginMessage"
+            class="message"
+        ></p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================================= -->
+<!-- HOME SCREEN -->
+<!-- ================================= -->
+
+<section
+    id="homeScreen"
+    class="screen hidden"
+>
+
+
+    <header class="app-header">
+
+        <div>
+
+            <h2>
+                Incidents
+            </h2>
+
+            <p>
+                Reported incidents around you
+            </p>
+
+        </div>
+
+
+        <button
+            id="logoutButton"
+            class="logout-button"
+        >
+            Logout
+        </button>
+
+    </header>
+
+
+
+    <!-- CATEGORY FILTER -->
+
+    <div class="category-container">
+
+        <button
+            class="category-button active"
+            data-category="All"
+        >
+            All
+        </button>
+
+
+        <button
+            class="category-button"
+            data-category="Accident"
+        >
+            Accident
+        </button>
+
+
+        <button
+            class="category-button"
+            data-category="Fighting"
+        >
+            Fighting
+        </button>
+
+
+        <button
+            class="category-button"
+            data-category="Rioting"
+        >
+            Rioting
+        </button>
+
+
+        <button
+            class="category-button"
+            data-category="Fire"
+        >
+            Fire
+        </button>
+ <button
+        class="category-button"
+        data-category="Others">
+        Others
+    </button>
+    </div>
+
+
+
+    <!-- NOTIFICATIONS -->
+
+    <div id="notificationContainer"></div>
+
+
+
+    <!-- INCIDENT LIST -->
+
+    <main id="reportsContainer">
+
+        <!-- Incidents will be loaded from Firebase here -->
+
+    </main>
+
+
+
+    <!-- BOTTOM NAVIGATION -->
+
+    <nav class="bottom-navigation">
+
+
+        <button
+            id="incidentsNav"
+            class="nav-button active"
+        >
+
+            🏠
+
+            <span>
+                Incidents
+            </span>
+
+        </button>
+
+
+
+        <button
+            id="openReportButton"
+            class="nav-button"
+        >
+
+            🚨
+
+            <span>
+                Report
+            </span>
+
+        </button>
+
+
+
+        <button
+            id="myReportsNav"
+            class="nav-button"
+        >
+
+            📋
+
+            <span>
+                My Reports
+            </span>
+
+        </button>
+
+
+    </nav>
+
+
+</section>
+
+
+
+<!-- ================================= -->
+<!-- REPORT INCIDENT SCREEN -->
+<!-- ================================= -->
+
+<section
+    id="reportScreen"
+    class="screen hidden"
+>
+
+
+    <header class="app-header">
+
+        <div>
+
+            <h2>
+                Report Incident
+            </h2>
+
+            <p>
+                Provide details about the incident
+            </p>
+
+        </div>
+
+
+        <button
+            id="backHomeButton"
+            class="logout-button"
+        >
+            Back
+        </button>
+
+    </header>
+
+
+
+    <main class="form-container">
+
+
+        <form id="reportForm">
+
+
+            <!-- INCIDENT TITLE -->
+
+            <div class="input-group">
+
+                <label for="incidentTitle">
+                    Incident Title
+                </label>
+
+                <input
+                    type="text"
+                    id="incidentTitle"
+                    placeholder="e.g. Road Accident"
+                    required
+                >
+
+            </div>
+
+
+
+            <!-- CATEGORY -->
+
+            <div class="input-group">
+
+                <label for="incidentCategory">
+                    Category
+                </label>
+
+                <select
+                    id="incidentCategory"
+                    required
+                >
+
+                    <option value="">
+                        Select category
+                    </option>
+
+                    <option value="Accident">
+                        Accident
+                    </option>
+
+                    <option value="Fighting">
+                        Fighting
+                    </option>
+
+                    <option value="Rioting">
+                        Rioting
+                    </option>
+
+                    <option value="Fire">
+                        Fire
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- DESCRIPTION -->
+
+            <div class="input-group">
+
+                <label for="incidentDescription">
+                    Description
+                </label>
+
+                <textarea
+                    id="incidentDescription"
+                    placeholder="Describe what happened..."
+                    rows="5"
+                    required
+                ></textarea>
+
+            </div>
+
+
+
+            <!-- IMAGE -->
+
+            <div class="input-group">
+
+                <label for="incidentImage">
+                    Picture
+                </label>
+
+                <input
+                    type="file"
+                    id="incidentImage"
+                    accept="image/*"
+                >
+
+
+                <div
+                    id="imagePreview"
+                    class="image-preview hidden"
+                >
+
+                    <img
+                        id="previewImage"
+                        src=""
+                        alt="Selected incident"
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <!-- LOCATION -->
+
+            <div class="location-box">
+
+                <h3>
+                    Incident Location
+                </h3>
+
+                <p id="locationStatus">
+                    Location has not been captured.
+                </p>
+
+                <button
+                    type="button"
+                    id="getLocationButton"
+                    class="secondary-button"
+                >
+                    📍 Get Current Location
+                </button>
+
+                <input
+                    type="hidden"
+                    id="latitude"
+                >
+
+                <input
+                    type="hidden"
+                    id="longitude"
+                >
+
+            </div>
+
+
+
+            <!-- SUBMIT -->
+
+            <button
+                type="submit"
+                class="primary-button"
+            >
+                Submit Incident
+            </button>
+
+
+            <p
+                id="reportMessage"
+                class="message"
+            ></p>
+
+
+        </form>
+
+    </main>
+
+
+</section>
+
+
+
+<!-- ================================= -->
+<!-- FIREBASE -->
+<!-- ================================= -->
+
+<script src="cordova.js"></script>
+
+
+<script src="https://www.gstatic.com/firebasejs/12.19.0/firebase-app-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/12.19.0/firebase-auth-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore-compat.js"></script>
+
+
+<script>
+
+    const firebaseConfig = {
+
+        apiKey:
+            "AIzaSyDqU7zB2xnAtZoo-jyOyL6ah0U5dwK2tpI",
+
+        authDomain:
+            "citizens-reporting-d770a.firebaseapp.com",
+
+        projectId:
+            "citizens-reporting-d770a",
+
+        storageBucket:
+            "citizens-reporting-d770a.firebasestorage.app",
+
+        messagingSenderId:
+            "863535618607",
+
+        appId:
+            "1:863535618607:web:b601a94a120605d92c04da"
+
+    };
+
+
+    firebase.initializeApp(
+        firebaseConfig
+    );
+
+
+    const auth =
+        firebase.auth();
+
+
+    const db =
+        firebase.firestore();
+
+</script>
+
+
+
+<!-- APP JAVASCRIPT -->
+
+<script src="js/app.js"></script>
+
+
+</body>
+
+</html>
