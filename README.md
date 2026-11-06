@@ -586,7 +586,16 @@ For production distribution, the application should be configured with a release
 
 ## Contributing
 
-Contributions are welcome! If you would like to improve Citizens Reporting, fix a bug, or introduce a new feature, follow the workflow below.
+Contributions are welcome! If you would like to improve Citizens Reporting, fix a bug, or introduce a new feature, follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your changes.
+3. Make your changes and test them.
+4. Submit a pull request with a clear description of your contribution.
+
+For major changes, open an issue first to discuss what you would like to improve.
+
+All contributions should keep the application reliable, maintainable, and easy to use.
 
 ### Contribution Workflow
 
@@ -644,6 +653,12 @@ GitHub: [thefortune-tech](https://github.com/thefortune-tech)
 
 ## Project Status
 
-**Status:** Active Development
+**Current Status:** Active Development
 
-The core incident reporting workflow is implemented and the Android application can be built successfully using Apache Cordova.
+Citizens Reporting currently supports its core incident reporting workflow, allowing authenticated users to submit incidents, discover community reports, filter incidents by category, and access their personal report history.
+
+The application is built with Apache Cordova and can be compiled for Android devices.
+
+Further improvements are planned to enhance location visualization, notification delivery, media management, and administrative moderation.
+
+The project remains open to improvements, contributions, and future feature development.
