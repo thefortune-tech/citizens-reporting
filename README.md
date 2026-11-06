@@ -1,4 +1,4 @@
-# Citizens Reporting
+# Citizens Reporting 
 
 A mobile-first incident reporting platform that enables citizens to report, discover, and monitor incidents within their communities.
 
