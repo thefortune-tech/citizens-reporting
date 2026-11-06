@@ -644,6 +644,12 @@ GitHub: [thefortune-tech](https://github.com/thefortune-tech)
 
 ## Project Status
 
-**Status:** Active Development
+**Current Status:** Active Development
 
-The core incident reporting workflow is implemented and the Android application can be built successfully using Apache Cordova.
+Citizens Reporting currently supports its core incident reporting workflow, allowing authenticated users to submit incidents, discover community reports, filter incidents by category, and access their personal report history.
+
+The application is built with Apache Cordova and can be compiled for Android devices.
+
+Further improvements are planned to enhance location visualization, notification delivery, media management, and administrative moderation.
+
+The project remains open to improvements, contributions, and future feature development.
