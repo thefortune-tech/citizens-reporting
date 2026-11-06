@@ -586,7 +586,16 @@ For production distribution, the application should be configured with a release
 
 ## Contributing
 
-Contributions are welcome! If you would like to improve Citizens Reporting, fix a bug, or introduce a new feature, follow the workflow below.
+Contributions are welcome! If you would like to improve Citizens Reporting, fix a bug, or introduce a new feature, follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your changes.
+3. Make your changes and test them.
+4. Submit a pull request with a clear description of your contribution.
+
+For major changes, open an issue first to discuss what you would like to improve.
+
+All contributions should keep the application reliable, maintainable, and easy to use.
 
 ### Contribution Workflow
 
