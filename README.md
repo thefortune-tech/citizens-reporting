@@ -586,36 +586,44 @@ For production distribution, the application should be configured with a release
 
 ## Contributing
 
-Contributions are welcome.
+Contributions are welcome! If you would like to improve Citizens Reporting, fix a bug, or introduce a new feature, follow the workflow below.
 
-To contribute:
+### Contribution Workflow
 
-1. Fork the repository.
-2. Create a feature branch.
+1. Fork the repository or create a feature branch if you have collaborator access.
+2. Create a descriptive branch for your changes.
 
 ```bash
 git checkout -b feature/your-feature
 ```
 
-3. Make your changes.
-4. Test the application.
-5. Commit your changes.
+3. Make your changes and test them to ensure they work as expected.
+4. Stage and commit your changes.
 
 ```bash
 git add .
-git commit -m "Add your feature"
+git commit -m "Describe your changes"
 ```
 
-6. Push your branch.
+5. Push your branch to GitHub.
 
 ```bash
 git push origin feature/your-feature
 ```
 
-7. Open a Pull Request.
+6. Open a Pull Request against the `main` branch.
+7. Provide a clear description of your changes and wait for review.
+8. Address any requested changes before the Pull Request is merged.
 
----
+### Collaboration Guidelines
 
+- Keep contributions focused and relevant to the project.
+- Write clear commit messages.
+- Test changes before submitting a Pull Request.
+- Review contributions constructively and provide useful feedback.
+- Avoid committing private credentials, API keys, or sensitive information.
+
+Thank you for helping improve Citizens Reporting!
 ## License
 
 This project is currently provided for development and assessment purposes.
